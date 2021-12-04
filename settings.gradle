@@ -1,4 +1,5 @@
 rootProject.name = 'backendStudy'
+include 'ecommerce1'
 include 'ecommerce'
 include 'common'
 
