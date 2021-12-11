@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: first-service
+          uri: http://localhost:8081/
+          predicates: #조건
+            - Path=/first-service/**
+        - id: second-service
+          uri: http://localhost:8082/
+          predicates:
+

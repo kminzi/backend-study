@@ -1,6 +1,4 @@
 rootProject.name = 'backendStudy'
 include 'user-service'
-include 'ecommerce1'
 include 'ecommerce'
-include 'common'
-
+include 'gateway'

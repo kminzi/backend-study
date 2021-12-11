@@ -1,11 +1,13 @@
 server:
-  port: 9001
+  port: 0 #random port 사용, 같은 서비스가 실행되어도 spring에서 Port 충돌을 방지해 줌.
 
 spring:
   application:
     name: user-service
 
 eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} #eureka에서 서비스 구분을 위함
   client:
     fetch-registry: true #eureka 서버로부터 인스턴스의 정보를 주기적으로 가져옴
     register-with-eureka: true
