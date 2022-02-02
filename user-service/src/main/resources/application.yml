@@ -7,9 +7,12 @@ spring:
 
 eureka:
   instance:
-    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} #eureka에서 서비스 구분을 위함
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} #eureka에서 서비스 구분을 위함
   client:
     fetch-registry: true #eureka 서버로부터 인스턴스의 정보를 주기적으로 가져옴
     register-with-eureka: true
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
+
+greeting: #웰컴 메세지 - env 오브젝트 사용 또는 @value 사용
+  messages: Welcome to sample ecommerce project!!
